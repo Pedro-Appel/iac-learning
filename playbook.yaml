@@ -1,0 +1,8 @@
+- hosts: terraform-ansible
+  tasks:
+  - name: Criando Arquivos
+    copy:
+      dest: /home/ubuntu/index.html
+      content: <h1>Notebook Playbook</h1>
+  - name: Levantando Servidor
+    shell: "nohup busybox httpd -f -p 8080 &"
